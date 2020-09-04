@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import LudotekaUtil from "./LudotekaUtil";
+import variables from './../App.scss';
 
 const Ludoteka = (props) => {
     const [ board, setBoard ] = useState([]);
     const [ winner, setWinner ] = useState(0);
     useEffect(() => {
+        console.log(variables);
         debugger;
-        const game = new LudotekaUtil(7, 6);
+        const game = new LudotekaUtil(parseInt(variables.row), parseInt(variables.col));
         let win = game.input([1,1,2,2,4,3,5,3,5,0,0,1,0,0]);
 
         let b = game.getBoard();

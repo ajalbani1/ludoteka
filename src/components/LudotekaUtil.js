@@ -12,8 +12,6 @@ export default class LudotekaUtil {
     };
     isWinner = (r, c, p) => {
         const dir = [[0,1],[0,-1],[-1,0],[1,0],[1,1],[-1,-1],[1,-1],[-1,1]];
-        // const dir = [[0,-1]];
-        console.log(`checking ${r} ${c}`);
         for(let [x, y] of dir) {
             let i = 0;
             let match = 0;
@@ -23,9 +21,8 @@ export default class LudotekaUtil {
                 if( this.board[nx] && this.board[nx][ny]) {
                     if( this.board[nx][ny] === p) {
                         match++;
-                        console.log(`check ${i} ... ${nx}_${ny}... ${this.board[nx][ny]} & ${this.board[r][c]}  match=${match}...${JSON.stringify(this.board)}`);
+                        // console.log(`check ${i} ... ${nx}_${ny}... ${this.board[nx][ny]} & ${this.board[r][c]}  match=${match}...${JSON.stringify(this.board)}`);
                         if(match===this.winrad-1) {
-                            console.log(`WINNER ${match}`);
                             return true;
                         }
                     } else {
@@ -33,7 +30,6 @@ export default class LudotekaUtil {
                     }
                 }
             }
-            console.log(`***`);
         }
         return false;
     };
