@@ -1,6 +1,8 @@
 ### install
 npm install
+
 npm install --only=dev
+
 npm run start
 
 ### Change Board Size
